@@ -4,10 +4,11 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: '/Portfolio-main/',
+  base: '/', // Updated for GitHub Pages
   server: {
-    host: "::",
-    port: 8080,
+    host: true,
+    port: 3000,
+    strictPort: true,
   },
   plugins: [
     react(),
@@ -21,7 +22,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    // Optimize build settings for Cloudflare Pages
+    sourcemap: true,
     target: 'esnext',
     minify: 'esbuild',
     cssMinify: true,
