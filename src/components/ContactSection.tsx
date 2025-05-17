@@ -1,4 +1,3 @@
-
 import { Mail, Linkedin, Phone, Github, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react"; // Add this import for the Download icon
@@ -8,7 +7,7 @@ const ContactSection = () => {
   const handleResumeDownload = () => {
     // Create a link to the resume file in the public folder
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // This assumes you'll upload a PDF file named resume.pdf to your public folder
+    link.href = import.meta.env.BASE_URL + 'resume.pdf'; // Use dynamic base path for GitHub Pages
     link.download = 'MyResume.pdf';
     document.body.appendChild(link);
     link.click();
