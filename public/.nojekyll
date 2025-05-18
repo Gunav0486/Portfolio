@@ -1,2 +1,3 @@
 
-
+# This file ensures that GitHub Pages doesn't process files with Jekyll
+# It's necessary for proper SPA routing with GitHub Pages

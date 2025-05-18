@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -18,6 +18,13 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+// Handle GitHub Pages routing
+function getBasename() {
+  // For GitHub Pages deployment
+  const repoName = location.hostname.includes('github.io') ? '/Portfolio-main' : '';
+  return repoName;
+}
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<
@@ -65,7 +72,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename="">
+          <BrowserRouter basename={getBasename()}>
             <Suspense fallback={
               <div className="min-h-screen flex items-center justify-center bg-background">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
