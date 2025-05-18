@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -7,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   base: '/Portfolio-main/', // Updated for GitHub Pages
   server: {
     host: true,
-    port: 3000,
+    port: 8080,
     strictPort: true,
   },
   plugins: [
