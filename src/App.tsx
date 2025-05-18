@@ -21,8 +21,9 @@ const queryClient = new QueryClient({
 
 // Handle GitHub Pages routing
 function getBasename() {
-  // For GitHub Pages deployment
-  const repoName = location.hostname.includes('github.io') ? '/Portfolio-main' : '';
+  // For GitHub Pages deployment - use the repository name as the basename
+  // This ensures paths are resolved correctly on GitHub Pages
+  const repoName = window.location.hostname.includes('github.io') ? '/Portfolio-main' : '';
   return repoName;
 }
 
