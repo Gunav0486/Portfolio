@@ -1,7 +1,8 @@
 
 import { Mail, Linkedin, Phone, Github, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Download, ExternalLink } from "lucide-react"; // Add ExternalLink icon
+import { Download, ExternalLink } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactSection = () => {
   // Function to handle resume download
@@ -29,16 +30,28 @@ const ContactSection = () => {
             <Mail className="h-12 w-12 text-cyber-blue-light mb-4" />
             <h3 className="text-xl font-medium mb-2 text-cyber-blue-dark">Email</h3>
             <p className="text-cyber-grey-dark mb-4">Reach out via email for any inquiries or opportunities</p>
-            <a href="mailto:gunavardhansammiti64045@gmail.com" className="text-cyber-blue-light hover:underline font-medium">
-              gunavardhansammiti64045@gmail.com
-            </a>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a 
+                    href="mailto:gunavardhansammiti64045@gmail.com" 
+                    className="text-cyber-blue-light hover:underline font-medium break-all px-2"
+                  >
+                    gunavardhansammiti64045@gmail.com
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Send me an email</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           
           <div className="bg-white rounded-xl shadow-lg p-8 animate-fade-in flex flex-col items-center text-center">
             <Linkedin className="h-12 w-12 text-cyber-blue-light mb-4" />
             <h3 className="text-xl font-medium mb-2 text-cyber-blue-dark">LinkedIn</h3>
             <p className="text-cyber-grey-dark mb-4">Connect with me professionally and see my career updates</p>
-            <a href="https://www.linkedin.com/in/guna-vardhan-sammiti-a0a34a30a" className="text-cyber-blue-light hover:underline font-medium">
+            <a href="https://www.linkedin.com/in/guna-vardhan-sammiti-a0a34a30a" className="text-cyber-blue-light hover:underline font-medium truncate max-w-full">
               www.linkedin.com/in/guna-vardhan-sammiti-a0a34a30a
             </a>
           </div>
