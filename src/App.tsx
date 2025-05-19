@@ -21,9 +21,11 @@ const queryClient = new QueryClient({
 
 // Handle GitHub Pages routing
 function getBasename() {
-  // For GitHub Pages deployment - use the repository name as the basename
-  // This ensures paths are resolved correctly on GitHub Pages
-  const repoName = window.location.hostname.includes('github.io') ? '/Portfolio-main' : '';
+  // For GitHub Pages deployment - check if we're on github.io
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  // Get the correct repository name from the pathname if on GitHub Pages
+  const pathParts = window.location.pathname.split('/');
+  const repoName = isGitHubPages && pathParts.length > 1 ? `/${pathParts[1]}` : '';
   return repoName;
 }
 
@@ -67,6 +69,9 @@ class ErrorBoundary extends React.Component<
 }
 
 const App = () => {
+  // Add console log to help debugging
+  console.log("App rendering with basename:", getBasename());
+  
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
