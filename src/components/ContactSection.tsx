@@ -1,6 +1,7 @@
-import { Mail, Linkedin, Phone, Github, Twitter } from "lucide-react";
+
+import { Mail, Linkedin, Phone, Github, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react"; // Add this import for the Download icon
+import { Download, ExternalLink } from "lucide-react"; // Add ExternalLink icon
 
 const ContactSection = () => {
   // Function to handle resume download
@@ -23,14 +24,13 @@ const ContactSection = () => {
           Feel free to reach out through any of the channels below.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg p-8 animate-fade-in flex flex-col items-center text-center">
             <Mail className="h-12 w-12 text-cyber-blue-light mb-4" />
             <h3 className="text-xl font-medium mb-2 text-cyber-blue-dark">Email</h3>
             <p className="text-cyber-grey-dark mb-4">Reach out via email for any inquiries or opportunities</p>
-            <a href="gunavardhansammiti64045@gmail.com" className="text-cyber-blue-light hover:underline font-medium">
-              gunavardhansammiti64045
-              @gmail.com
+            <a href="mailto:gunavardhansammiti64045@gmail.com" className="text-cyber-blue-light hover:underline font-medium">
+              gunavardhansammiti64045@gmail.com
             </a>
           </div>
           
@@ -43,12 +43,22 @@ const ContactSection = () => {
             </a>
           </div>
           
-          <div className="bg-white rounded-xl shadow-lg p-8 animate-fade-in flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+          <div className="bg-white rounded-xl shadow-lg p-8 animate-fade-in flex flex-col items-center text-center">
             <Github className="h-12 w-12 text-cyber-blue-light mb-4" />
             <h3 className="text-xl font-medium mb-2 text-cyber-blue-dark">GitHub</h3>
             <p className="text-cyber-grey-dark mb-4">Check out my code and security projects</p>
             <a href="https://github.com/Gunav0486?tab=repositories" className="text-cyber-blue-light hover:underline font-medium">
-              https://github.com/Gunav0486?tab=repositories
+              github.com/Gunav0486
+            </a>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-lg p-8 animate-fade-in flex flex-col items-center text-center">
+            <FileText className="h-12 w-12 text-cyber-blue-light mb-4" />
+            <h3 className="text-xl font-medium mb-2 text-cyber-blue-dark">Medium</h3>
+            <p className="text-cyber-grey-dark mb-4">Read my CTF writeups and security insights</p>
+            <a href="https://medium.com/@jinX_state" target="_blank" rel="noopener noreferrer" className="text-cyber-blue-light hover:underline font-medium flex items-center">
+              @jinX_state
+              <ExternalLink className="h-4 w-4 ml-1" />
             </a>
           </div>
         </div>

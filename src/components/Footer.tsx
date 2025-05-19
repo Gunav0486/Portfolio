@@ -1,5 +1,5 @@
 
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -54,6 +54,16 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://medium.com/@jinX_state" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyber-grey-light hover:text-cyber-blue-light transition-colors"
+                >
+                  CTF Writeups
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -76,6 +86,17 @@ const Footer = () => {
                 <Phone className="h-5 w-5 mr-3 text-cyber-blue-light" />
                 <a href="tel:+1234567890" className="text-cyber-grey-light hover:text-cyber-blue-light transition-colors">
                   +91 7893165667
+                </a>
+              </li>
+              <li className="flex items-center">
+                <FileText className="h-5 w-5 mr-3 text-cyber-blue-light" />
+                <a 
+                  href="https://medium.com/@jinX_state" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-cyber-grey-light hover:text-cyber-blue-light transition-colors"
+                >
+                  Medium CTF Writeups - @jinX_state
                 </a>
               </li>
             </ul>
